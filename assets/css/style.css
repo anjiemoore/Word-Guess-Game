@@ -9,6 +9,11 @@ body {
 
 }
 
+h1 {
+    font-family: 'Acme', sans-serif;
+    color: white;
+}
+
 #container {
     width: 75%;
     height: 100%;

@@ -1,40 +1,57 @@
 // Variables
 
-const pokemon = [
+const pokemon = {
+    pikachu: 
     {
-        name: "pikachu"
+        image: 'pikachu.jpeg'
     },
+    charmander: 
     {
-        name: "charmander"
+        image: 'charmander.png'
     },
+    squirtle:
     {
-        name: "squirtle"
+        image: 'squirtle.jpg'
     },
+    eevee:
     {
-        name: "eevee"
+        image: 'eevee.png'
     },
+    mew:
     {
-        name: 'mew'
+        image: 'mew.png'
     },
+    bulbasaur:
     {
-        name: 'bulbasaur'
+        image: 'bulbasaur.jpg'
     },
+    mewtwo:
     {
-        name: 'mewtwo'
+        image: 'mewtwo.jpg'
     },
+    slowbro:
     {
-        name: 'vulpix'
+        image: 'slowbro.png'
     },
+    jigglypuff:
     {
-        name: 'jigglypuff'
+        image: 'jigglypuff.jpg'
     },
+    lugia:
     {
-        name: 'lugia'
+        image: 'Lugia.png'
     }
-];
+};
 
-var word = pokemon[Math.floor(Math.random() * pokemon.length)];
-var chosenWord = word;
+const entries = Object.entries(pokemon);
+console.log(entries);
+const word = entries[Math.floor(Math.random() * entries.length)];
+console.log(word);
+Object.entries(word).forEach(([key, value]) => console.log('${key} ${value}'));
+
+// var word = pokemon[Math.floor(Math.random() * pokemon.length)];
+// var chosenWord = word;
+// for (var i = 0; i <)
 let wins = 0;
 let points = 0;
 let wordLength;
@@ -43,9 +60,6 @@ let rightGuess = [];
 let underscore = [];
 
 // function gameStart () {
-
-console.log(chosenWord);
-
 let generateUnderscore = () => {
     for(let i =0; i < chosenWord.length; i++) {
         underscore.push('_');

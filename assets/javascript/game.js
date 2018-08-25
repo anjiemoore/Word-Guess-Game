@@ -41,14 +41,11 @@ const pokemon = [
         image: 'Lugia.png'
     }
 ]
-// const entries = Object.entries(pokemon);
-// console.log(entries);
-// const chosenWord = entries[Math.floor(Math.random() * entries.length)];
-// console.log(chosenWord);
 
-for (var i=0; i < pokemon.length;i++) {
-    console.log(pokemon[i]);
-}
+const entries = Object.entries(pokemon);
+console.log(entries);
+const chosenWord = entries[Math.floor(Math.random() * entries.length)];
+console.log(chosenWord);
 
 
 let wins = 0;

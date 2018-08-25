@@ -43,11 +43,12 @@ const pokemon = [
 ]
 
 const entries = Object.entries(pokemon);
-console.log(entries);
 const chosenWord = entries[Math.floor(Math.random() * entries.length)];
-console.log(chosenWord);
+const chosenWordName = chosenWord[1].name;
 
-
+for(let [key, value] of Object.entries(chosenWord)) {
+    console.log(key, value);
+}
 let wins = 0;
 let points = 0;
 let wordLength;
@@ -57,7 +58,7 @@ let underscore = [];
 
 // function gameStart () {
 let generateUnderscore = () => {
-    for(let i =0; i < chosenWord.length; i++) {
+    for(let i =0; i < chosenWord[1].name.length; i++) {
         underscore.push('_');
     }
     return underscore;
@@ -68,17 +69,20 @@ document.addEventListener('keypress', (event) => {
     let keycode = event.keyCode;
     let keyWord = String.fromCharCode(keycode);
 
-    if(chosenWord.indexOf(keyWord) > -1) {
+    if(chosenWord[1].name.indexOf(keyWord) > -1) {
         rightGuess.push(keyWord);
-        underscore[chosenWord.indexOf(keyWord)] = keyWord;
-        console.log(rightGuess);
-
+        for (var i=0; i<chosenWordName.length; i++) {
+            if(chosenWordName[i] === keyWord) {
+                underscore[i] = keyWord;
+                console.log(underscore);
+            }
+        }
     if(underscore.join('') == chosenWord) {
         alert('You Win!');
         }
     } else {
         wrongGuess.push(keyWord);
-        // console.log(wrongGuess);
+        console.log(wrongGuess);
 
     }
 
